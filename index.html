@@ -1,1 +1,188 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>الصفحة محمية — KLAF</title>
 
+  <style>
+    :root{
+      --bg: #000000;    /* خلفية سوداء */
+      --fg: #ffffff;    /* نص أبيض */
+      --muted: #cccccc; /* رمادي */
+      --radius: 12px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Tajawal", Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      background:var(--bg);
+      color:var(--fg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+    }
+
+    /* أعلى الصفحة */
+    .topbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      padding:15px 25px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(0,0,0,0.3);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .topbar img{
+      height:42px;
+      user-select:none;
+    }
+
+    .lang-switch{
+      font-size:15px;
+      font-weight:600;
+      cursor:pointer;
+      color:var(--fg);
+      padding:6px 12px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.4);
+      background:rgba(255,255,255,0.05);
+      transition:0.2s;
+    }
+
+    .lang-switch:hover{
+      background:rgba(255,255,255,0.15);
+    }
+
+    .card{
+      width:100%;
+      max-width:860px;
+      background:rgba(255,255,255,0.03);
+      border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+      padding:34px;
+      display:flex;
+      gap:28px;
+      align-items:center;
+      justify-content:space-between;
+      border:1px solid rgba(255,255,255,0.1);
+      margin-top:80px;
+    }
+
+    .left{
+      flex:1 1 60%;
+    }
+
+    .title{
+      font-size:36px;
+      margin-bottom:10px;
+      color:#ffffff;
+      font-weight:800;
+    }
+
+    .subtitle{
+      color:var(--muted);
+      font-size:15px;
+      margin-bottom:20px;
+      line-height:1.7;
+    }
+
+    .note{
+      font-size:14px;
+      color:#ff9d9d;
+      background:rgba(255,20,20,0.15);
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid rgba(255,0,0,0.3);
+      line-height:1.7;
+    }
+
+    .lock-wrap{
+      width:160px;
+      height:160px;
+      border-radius:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:2px dashed rgba(255,255,255,0.1);
+    }
+
+    .lock{
+      width:110px;
+      height:110px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:14px;
+      background:rgba(255,255,255,0.04);
+      padding:10px;
+    }
+
+    .lock svg{
+      width:72px;
+      height:72px;
+      color:var(--fg);
+    }
+
+    @media (max-width:700px){
+      body{padding:18px}
+      .card{flex-direction:column; padding:20px; gap:20px}
+      .title{font-size:28px}
+      .right{order:-1}
+      .lock-wrap{width:120px;height:120px}
+      .lock svg{width:56px;height:56px}
+      .topbar img{height:34px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شعار + لغة -->
+  <div class="topbar">
+    <img src="https://cdn.klafstore.com/KH515/KLAF/main/Image/logo.png.png" alt="KLAF Logo">
+
+    <div class="lang-switch">AR | EN</div>
+  </div>
+
+  <main class="card">
+    <section class="left">
+
+      <h1 class="title">الصفحة محمية</h1>
+
+      <p class="subtitle">
+        لا تمتلك الصلاحية للوصول إلى هذا المحتوى.
+      </p>
+
+      <div class="note">
+        ⚠️ **تحذير شديد:**  
+        أي محاولة دخول غير مصرح بها يتم تسجيلها تلقائياً  
+        وقد ينتج عنها **حظر دائم أو إجراء أمني**.
+      </div>
+
+    </section>
+
+    <aside class="right">
+      <div class="lock-wrap">
+        <div class="lock">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="3.5" y="10" width="17" height="9.5" rx="2"
+              stroke="currentColor" stroke-width="1.6" />
+            <path d="M7 10V8a5 5 0 1 1 10 0v2"
+              stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="12" cy="14.5" r="1.3" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+</body>
+</html>
